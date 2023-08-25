@@ -10,7 +10,7 @@
 ### With conda env
 
 create the conda environment for jodie: 
-$ conda env create -f fasterrcnn-tensorflow-condaenc.yml
+$ conda env create -f fasterrcnn-tensorflow-condaenv.yml
 
 ### Traning and testing 
 
