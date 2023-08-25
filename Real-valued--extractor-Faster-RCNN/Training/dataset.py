@@ -78,14 +78,25 @@ def transform_images(x_train, size):
     return x_train
 
 
-"""def def_kernel(radius):
-    kernel = np.zeros((448,448))#((896, 896)) 
-    y, x = np.ogrid[-448//2:448//2, -448//2:448//2]#[-896//2:896//2, -896//2:896//2] 
-    mask = x**2 + y**2 <= 250**2 
-    kernel[mask] = 1
-    complexe_kernel = tf.complex(kernel, tf.zeros_like(kernel))
-    complexe_kernel = tf.cast(complexe_kernel,dtype=tf.complex64)
-    return complexe_kernel"""
+IMAGE_FEATURE_MAP = {
+    # 'image/width': tf.io.FixedLenFeature([], tf.int64),
+    # 'image/height': tf.io.FixedLenFeature([], tf.int64),
+    # 'image/filename': tf.io.FixedLenFeature([], tf.string),
+    # 'image/source_id': tf.io.FixedLenFeature([], tf.string),
+    # 'image/key/sha256': tf.io.FixedLenFeature([], tf.string),
+    'image/encoded': tf.io.FixedLenFeature([], tf.string),
+    # 'image/format': tf.io.FixedLenFeature([], tf.string),
+    'image/object/bbox/xmin': tf.io.VarLenFeature(tf.float32),
+    'image/object/bbox/ymin': tf.io.VarLenFeature(tf.float32),
+    'image/object/bbox/xmax': tf.io.VarLenFeature(tf.float32),
+    'image/object/bbox/ymax': tf.io.VarLenFeature(tf.float32),
+    'image/object/class/text': tf.io.VarLenFeature(tf.string),
+    # 'image/object/class/label': tf.io.VarLenFeature(tf.int64),
+    # 'image/object/difficult': tf.io.VarLenFeature(tf.int64),
+    # 'image/object/truncated': tf.io.VarLenFeature(tf.int64),
+    # 'image/object/view': tf.io.VarLenFeature(tf.string),
+}
+
 def parse_tfrecord(tfrecord, class_table, size):
     x = tf.io.parse_single_example(tfrecord, IMAGE_FEATURE_MAP)
     x_train = tf.io.decode_raw(x['image/encoded'], tf.float32)
