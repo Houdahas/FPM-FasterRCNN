@@ -1,0 +1,50 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: FPM-FasterRCNN
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: 'Houda, Berndatte, Marc, Jacques, Yaneck'
+    family-names: 'Hassini, Dorizzi, Thellier, Klossa, Gottesman'
+    email: houdahassini@icloud.com
+    name-particle: Houda Hassini
+    affiliation: >-
+      Samovar, Télécom SudParis, Institut Polytechnique de
+      Paris, 91120 Palaiseau, France
+identifiers:
+  - type: url
+    value: 'https://github.com/Houdahas/FPM-FasterRCNN'
+abstract: >-
+  Diagnosis of many diseases relies, at least on first
+  intention, on an analysis of blood smears acquired with a
+  microscope. However, image quality is often insufficient
+  for the automation of such processing. A promising
+  improvement concerns the acquisition of enriched
+  information on samples. In particular, Quantitative Phase
+  Imaging (QPI) techniques, which allow the digitization of
+  the phase in complement to the intensity, are attracting
+  growing interest. Such imaging allows the exploration of
+  transparent objects not visible in the intensity image
+  using the phase image only. Another direction proposes
+  using stained images to reveal some characteristics of the
+  cells in the intensity image; in this case, the phase
+  information is not exploited. In this paper, we question
+  the interest of using the bi-modal information brought by
+  intensity and phase in a QPI acquisition when the samples
+  are stained. We consider the problem of detecting
+  parasitized red blood cells for diagnosing malaria from
+  stained blood smears using a Deep Neural Network (DNN).
+  The Fourier Ptychographic Microscopy (FPM) is used as the
+  computational microscopy framework to produce QPI images.
+  We show that the bi-modal information enhances the
+  detection performance by 4% compared to the intensity
+  image only when the convolution in the DNN is implemented
+  through a complex-based formalism. This proves that the
+  DNN can benefit from the bi-modal enhanced information. We
+  conjecture that these results should extend to other
+  applications processed through QPI acquisition.
+license: MIT
