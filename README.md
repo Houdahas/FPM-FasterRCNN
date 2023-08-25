@@ -12,5 +12,8 @@
 create the conda environment for jodie: 
 $ conda env create -f fasterrcnn-tensorflow-condaenc.yml
 
+### Traning and testing 
+
 The training data must be TFRecord format or the dataloader must be adapted to your dataset format.
+The code allows to be used to train RPN only or all the faster RCNN 
 
